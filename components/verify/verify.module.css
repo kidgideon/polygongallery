@@ -1,0 +1,179 @@
+/* verify.module.css */
+
+.verifyInterface {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.verifyInterface h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.imageArea {
+  width: 100%;
+  padding-top: 65%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.artImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  padding: 0.75rem 1rem;
+  flex-grow: 1;
+}
+
+.info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.status {
+  font-weight: bold;
+  color: #ff9800;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #eee;
+}
+
+.certifyBtn,
+.rejectBtn,
+.viewDetailsBtn,
+.closeBtn,
+.viewProofBtn {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.certifyBtn {
+  background-color: black;
+  color: #fff;
+}
+
+.rejectBtn {
+  background-color: red;
+  color: #fff;
+}
+
+.viewDetailsBtn {
+  background-color: #333;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.closeBtn {
+  background-color: #888;
+  color: #fff;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.viewProofBtn {
+  background-color: #673ab7;
+  color: #fff;
+  margin-top: 0.25rem;
+}
+
+.paymentProof {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.paymentLogo {
+  max-width: 50px;
+  margin: 0.25rem 0;
+}
+
+/* Popup Overlays */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zoomed Artwork / Proof */
+.zoomedImage {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  z-index: 1100; /* above details popup */
+}
+
+/* Details Popup */
+.detailsPopup {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1050px; /* below zoomed proof */
+}
+
+.detailsPopup h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.detailsPopup p {
+  margin: 0.4rem 0;
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 3rem;
+}

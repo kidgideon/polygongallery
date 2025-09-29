@@ -40,9 +40,9 @@ const Navbar = () => {
           {/* Desktop Links */}
           <div className={styles.linkAreaDesktop}>
             <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/support">Support</Link>
+            <a href="https://thepolygon.ca/about/" target="_blank" rel="noopener noreferrer">About</a>
+            <a href="https://thepolygon.ca/contact-us/" target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href="https://thepolygon.ca/support/" target="_blank" rel="noopener noreferrer">Support</a>
           </div>
 
           {/* Mobile Menu (animated) */}
@@ -56,9 +56,9 @@ const Navbar = () => {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
-                <Link href="/support">Support</Link>
+                <a href="https://thepolygon.ca/about/" target="_blank" rel="noopener noreferrer">About</a>
+                <a href="https://thepolygon.ca/contact-us/" target="_blank" rel="noopener noreferrer">Contact</a>
+                <a href="https://thepolygon.ca/support/" target="_blank" rel="noopener noreferrer">Support</a>
               </motion.div>
             )}
           </AnimatePresence>

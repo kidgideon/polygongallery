@@ -14,9 +14,27 @@ const Footer = () => {
         {/* Links */}
         <div className={styles.links}>
           <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/support">Support</Link>
+          <a
+            href="https://thepolygon.ca/about/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            About
+          </a>
+          <a
+            href="https://thepolygon.ca/contact-us/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact
+          </a>
+          <a
+            href="https://thepolygon.ca/support/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Support
+          </a>
         </div>
       </div>
 

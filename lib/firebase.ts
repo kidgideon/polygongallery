@@ -9,7 +9,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDaeGC7v0Boxx6n5pBxFsoNAgQ0_fktaHo",
   authDomain: "polygongallery.firebaseapp.com",
   projectId: "polygongallery",
-  storageBucket: "polygongallery.appspot.app",
+  storageBucket: "polygongallery.firebasestorage.app",
   messagingSenderId: "388000716895",
   appId: "1:388000716895:web:10cde04a4d0a788b96e3ea",
 };

@@ -212,6 +212,7 @@
     align-items: center;
     flex-direction: row;
     gap: 10px;
+    margin-top: 20px;
 }
 
 /* payments list */
@@ -241,7 +242,7 @@
 
 /* proofs */
 .wrapper .proofUploader input { margin-bottom: 10px; }
-.wrapper .proofPreview { width: 100%; max-width: 280px; height: auto; border: 1px solid #000; }
+.wrapper .proofPreview { width: 150px; border: 1px solid #000; }
 
 /* progress */
 .wrapper .progressWrap {

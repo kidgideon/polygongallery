@@ -1,0 +1,59 @@
+.bannerInterface {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bannerSlider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bannerTrack {
+  display: flex;
+  width: 300%; /* since 3 images */
+  height: 100%;
+}
+
+.bannerBackground {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.bannerOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.bannerLogo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.bannerTextArea {
+  max-width: 800px;
+}
+
+.bannerHeading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.bannerSubText {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}

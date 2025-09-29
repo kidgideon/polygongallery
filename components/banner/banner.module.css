@@ -41,9 +41,12 @@
 .bannerHeading {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
 }
 
 .bannerSubText {
   font-size: 1.2rem;
   opacity: 0.9;
 }
+

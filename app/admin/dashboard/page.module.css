@@ -1,0 +1,113 @@
+/* Lock screen container */
+.lockScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+  color: #000;
+  font-family: Arial, sans-serif;
+  gap: 2rem;
+}
+
+/* PIN input container */
+.pinInputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pinBox {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.pinBox:focus {
+  border-color: #000;
+}
+
+/* Change PIN button */
+.changePinBtn {
+  padding: 0.6rem 1.2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.changePinBtn:hover {
+  background-color: #333;
+}
+
+/* Modal overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content */
+.modal {
+  background-color: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+}
+
+.modalInput {
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.modalInput:focus {
+  border-color: #000;
+}
+
+/* Modal buttons */
+.modalBtns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modalBtn {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+.modalBtn:hover {
+  background-color: #333;
+}
+
+/* Dashboard content (after unlock) */
+.dashboardInterface {
+  padding: 1rem;
+}

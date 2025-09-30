@@ -40,7 +40,6 @@ const Verify = () => {
   const [artworks, setArtworks] = useState<ArtworkItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [zoomedArtwork, setZoomedArtwork] = useState<ArtworkItem | null>(null);
-  const [zoomedProof, setZoomedProof] = useState<string | null>(null);
   const [detailsArtwork, setDetailsArtwork] = useState<ArtworkItem | null>(null);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
 
@@ -52,9 +51,10 @@ const Verify = () => {
     snap.docs.forEach((docSnap) => {
       const data = docSnap.data();
       if (Array.isArray(data.artworks)) {
-        data.artworks.forEach((a: any) => {
+        data.artworks.forEach((a: any, index: number) => {
           allArtworks.push({
             ...a,
+            id: a.id || `${docSnap.id}-${index}`, // ensure unique ID
             artist: data.artist,
             payment: data.payment,
           });
@@ -100,9 +100,9 @@ const Verify = () => {
       ) : (
         <div className={styles.cards}>
           <AnimatePresence>
-            {artworks.map((art) => (
+            {artworks.map((art, index) => (
               <motion.div
-                key={art.id}
+                key={art.id || index} // fallback in case id is missing
                 className={styles.card}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -180,30 +180,6 @@ const Verify = () => {
         )}
       </AnimatePresence>
 
-      {/* Zoomed Payment Proof */}
-      <AnimatePresence>
-        {zoomedProof && (
-          <motion.div
-            className={styles.popupOverlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setZoomedProof(null)}
-          >
-            <motion.img
-              src={zoomedProof}
-              alt="Payment Proof"
-              className={styles.zoomedImage}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 2 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Artwork Details Popup */}
       <AnimatePresence>
         {detailsArtwork && (
@@ -233,13 +209,16 @@ const Verify = () => {
                 <div className={styles.paymentProof}>
                   <p><strong>Paid Amount:</strong> ${detailsArtwork.payment.amount}</p>
                   <p><strong>Payment Method:</strong> {detailsArtwork.payment.method.name}</p>
-                 
-                  <button
+
+                  {/* Open proof in new tab */}
+                  <a
+                    href={detailsArtwork.payment.proofUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.viewProofBtn}
-                    onClick={() => setZoomedProof(detailsArtwork.payment!.proofUrl!)}
                   >
-                    View Proof
-                  </button>
+                    View Payment Proof
+                  </a>
                 </div>
               )}
 
@@ -256,4 +235,5 @@ const Verify = () => {
     </div>
   );
 };
+
 export default Verify;
